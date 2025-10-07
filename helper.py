@@ -29,3 +29,14 @@ def xor(bits1, bits2):
     if len(bits1) != len(bits2):
         raise ValueError("Binary strings must be same length for XOR")
     return ''.join('1' if b1 != b2 else '0' for b1, b2 in zip(bits1, bits2))
+
+
+def flip_bit(hex_string, bit_position):
+    """Flip a specific bit in a hex string"""
+    # Convert to binary
+    binary = hex_to_bin(hex_string)
+    # Flip the specified bit
+    binary_list = list(binary)
+    binary_list[bit_position] = '1' if binary_list[bit_position] == '0' else '0'
+    # Convert back to hex
+    return bin_to_hex(''.join(binary_list))

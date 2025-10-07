@@ -313,7 +313,7 @@ def main():
     print("DES IMPLEMENTATION TEST")
     print("=" * 60)
     
-    # Test vectors from the assignment
+    # Test vectors
     plaintext = "02468aceeca86420"
     key = "0f1571c947d9e859"
     expected_ciphertext = "da02ce3a89ecac3b"
@@ -371,7 +371,7 @@ def main():
     
     # Create two keys that differ by 1 bit
     key1 = "133457799BBCDFF1"
-    key2 = flip_bit(key1, 0)  # Flip first bit
+    key2 = helper.flip_bit(key1, 0)  # Flip first bit
     
     print(f"Key 1: {key1}")
     print(f"Key 2: {key2}")
@@ -401,16 +401,6 @@ def main():
     print("TESTING COMPLETE")
     print("=" * 60)
 
-# Helper function you'll need to implement
-def flip_bit(hex_string, bit_position):
-    """Flip a specific bit in a hex string"""
-    # Convert to binary
-    binary = helper.hex_to_bin(hex_string)
-    # Flip the specified bit
-    binary_list = list(binary)
-    binary_list[bit_position] = '1' if binary_list[bit_position] == '0' else '0'
-    # Convert back to hex
-    return helper.bin_to_hex(''.join(binary_list))
 
 if __name__ == "__main__":
     main()
